@@ -1,15 +1,24 @@
 package ac.za.cput.adp3.xyzcongolmerate.factory.org;
 
+import ac.za.cput.adp3.xyzcongolmerate.domain.org.Organisation;
+import org.junit.Assert;
 import org.junit.Test;
 
 import static org.junit.Assert.*;
 
 public class OrganisationFactoryTest {
 
-    //TODO: implement method body ONLY!
     @Test
-    public void buildOrganisation() {
-        throw new UnsupportedOperationException("Not supported yet.");
+    public void buildOrganisation()
+    {
+        String organisation = "XYZConglomerate";
+
+        Organisation organisation1 = OrganisationFactory.buildOrganisation(organisation);
+
+        Assert.assertNotNull(organisation1.getOrgCode());
+        Assert.assertEquals(organisation, organisation1.getOrgName());
+
+        System.out.println(organisation1.getOrgCode() + "\n" + organisation1.getOrgName());
         /**
          * Your implementation goes here
          *

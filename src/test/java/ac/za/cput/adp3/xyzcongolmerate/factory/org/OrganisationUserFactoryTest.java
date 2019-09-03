@@ -1,15 +1,26 @@
 package ac.za.cput.adp3.xyzcongolmerate.factory.org;
 
+import ac.za.cput.adp3.xyzcongolmerate.domain.org.OrganisationUser;
+import org.junit.Assert;
 import org.junit.Test;
 
 import static org.junit.Assert.*;
 
-public class OrganisationUserFactoryTest {
+public class OrganisationUserFactoryTest
+{
 
-    //TODO: implement method body ONLY!
     @Test
-    public void buildOrganisationUser() {
-        throw new UnsupportedOperationException("Not supported yet.");
+    public void buildOrganisationUser()
+    {
+        String orgCode = "OF";
+        String userEmail = "MerleHamman@yahoo.com";
+
+        OrganisationUser orgUser = OrganisationUserFactory.buildOrganisationUser(orgCode, userEmail);
+
+        Assert.assertNotNull(orgUser);
+        Assert.assertEquals(userEmail, orgUser.getUserEmail());
+
+        System.out.println(orgUser.getOrgCode() + "\n" + orgUser.getUserEmail());
         /**
          * Your implementation goes here
          *

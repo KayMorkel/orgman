@@ -1,15 +1,27 @@
 package ac.za.cput.adp3.xyzcongolmerate.factory.user;
 
+import ac.za.cput.adp3.xyzcongolmerate.domain.user.User;
+import org.junit.Assert;
 import org.junit.Test;
 
 import static org.junit.Assert.*;
 
-public class UserFactoryTest {
+public class UserFactoryTest
+{
 
-    //TODO: implement method body ONLY!
     @Test
-    public void buildUser() {
-        throw new UnsupportedOperationException("Not supported yet.");
+    public void buildUser()
+    {
+        String userEmail = "KayMork@gmail.com";
+        String fName = "Kaylin";
+        String lName = "Morkel";
+
+        User user = UserFactory.buildUser(userEmail, fName, lName);
+
+        Assert.assertNotNull(user);
+        Assert.assertEquals(userEmail, user.getUserEmail());
+
+        System.out.println(user.getUserEmail() + "\n" + user.getFirstName()  + "\n" + user.getLastName());
         /**
          * Your implementation goes here
          *

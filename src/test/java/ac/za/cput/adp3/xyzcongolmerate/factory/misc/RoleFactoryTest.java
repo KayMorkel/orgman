@@ -1,15 +1,25 @@
 package ac.za.cput.adp3.xyzcongolmerate.factory.misc;
 
+import ac.za.cput.adp3.xyzcongolmerate.domain.misc.Role;
+import org.junit.Assert;
 import org.junit.Test;
 
 import static org.junit.Assert.*;
 
-public class RoleFactoryTest {
+public class RoleFactoryTest
+{
 
-    //TODO: implement method body ONLY!
     @Test
-    public void buildRole() {
-        throw new UnsupportedOperationException("Not supported yet.");
+    public void buildRole()
+    {
+        String roleName = "CEO";
+
+        Role role = RoleFactory.buildRole(roleName);
+
+        Assert.assertNotNull(role.getRoleId());
+        Assert.assertEquals(roleName, role.getRoleName());
+
+        System.out.println(role.getRoleId() + "\n" + role.getRoleName());
         /**
          * Your implementation goes here
          *

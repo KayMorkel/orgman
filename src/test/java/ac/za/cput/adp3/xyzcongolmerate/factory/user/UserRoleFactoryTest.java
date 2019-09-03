@@ -1,15 +1,27 @@
 package ac.za.cput.adp3.xyzcongolmerate.factory.user;
 
+import ac.za.cput.adp3.xyzcongolmerate.domain.user.UserRole;
+import org.junit.Assert;
 import org.junit.Test;
 
 import static org.junit.Assert.*;
 
-public class UserRoleFactoryTest {
-
-    //TODO: implement method body ONLY!
+public class UserRoleFactoryTest
+{
     @Test
-    public void buildUserRole() {
-        throw new UnsupportedOperationException("Not supported yet.");
+    public void buildUserRole()
+    {
+        String ordCode = "OF";
+        String userEmail = "kayKorpor@yahoo.com";
+        String roleId = "RF";
+
+        UserRole userRole = UserRoleFactory.buildUserRole(ordCode, userEmail, roleId);
+
+        Assert.assertNotNull(userRole);
+        Assert.assertEquals(ordCode, userRole.getOrgCode());
+
+        System.out.println(userRole.getOrgCode() + " \n" +  userRole.getUserEmail()  + " \n" + userRole.getRoleId());
+
         /**
          * Your implementation goes here
          *

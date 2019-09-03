@@ -14,7 +14,16 @@ public class Helper {
 
     public static String getSuffixFromClassName(Class<?> aClass) {
         String className = getClassName(aClass);
-        throw new UnsupportedOperationException("Not yet supported!");
+
+        String suffix = "";
+        for (int i = 0; i<className.length(); i++)
+        {
+            if(Character.isUpperCase(className.charAt(i)))
+            {
+                suffix = suffix + className.charAt(i);
+            }
+        }
+        return suffix;
         /**
          * Your implementation goes here
          *
